@@ -78,7 +78,7 @@ public class RevisionHelperScript : MonoBehaviour
     private const float BackupTPBT = 15f;
     class Settings
     {
-        public List<List<string>> Questions = new List<List<string>>() { new List<string>() { "No questions created. Go into this module's mod settings and add some!", "Correct answer", "Incorrect answer #1", "Incorrect answer #2" } };
+        public List<List<string>> Questions;
         public float BaseCountdownTime = 45f;
         public float OverThreeAnswersIncrement = 2f;
         public float LongQuestionIncrement = 2f;
@@ -169,6 +169,8 @@ public class RevisionHelperScript : MonoBehaviour
         {
             _moduleID = _moduleIdCounter++;
             GetSettings();
+            if (_Settings.Questions == null)
+                _Settings.Questions = new List<List<string>>() { new List<string>() { "No questions created. Go into this module's mod settings and add some!", "Correct answer", "Incorrect answer #1", "Incorrect answer #2" } };
             SortOutMissionDescription();
             RainbowCoroutine = StartCoroutine(Rainbow());
             Dot.color = new Color();
