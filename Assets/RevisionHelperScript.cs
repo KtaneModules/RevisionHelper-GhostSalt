@@ -96,7 +96,7 @@ public class RevisionHelperScript : MonoBehaviour
     {
         try
         {
-            string description = Application.isEditor ? "" : Missions.Description.UnwrapOr("[Revision Helper] act 30\n[Revision Helper] bon 3\n[Revision Helper] 3an 50\n[Revision Helper] lon 8\n[Revision Helper] question  correct  incorrect");
+            string description = Application.isEditor ? "" : Missions.Description.UnwrapOr("");
             var matches = Regex.Matches(description, @"^(?:// )?\[Revision ?Helper\] (.*)$", RegexOptions.Multiline | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
             for (int i = 0; i < matches.Count; i++)
             {
